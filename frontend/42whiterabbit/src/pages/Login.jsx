@@ -1,6 +1,26 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const MainContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 3rem;
+  justify-content: center;
+`;
+
+const Button = styled.button`
+  background-color: #4e1a4e;
+  height: 70px;
+  width: 200px;
+  border-radius: 15px;
+  border-color: white;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  font-family: monospace;
+`;
 
 const Login = () => {
   const { authInfo } = useSelector((state) => state.auth);
@@ -19,9 +39,9 @@ const Login = () => {
   }, []);
 
   return (
-    <div>
-      <button onClick={() => handleNavigate()}>login</button>
-    </div>
+    <MainContainer>
+      <Button onClick={() => handleNavigate()}>LOGIN</Button>
+    </MainContainer>
   );
 };
 
